@@ -12,18 +12,22 @@ int GetTemperature(char Units)
   
   Temp = Min + (rand () % (Max - Min + 1));
 
-  if(Units == C_KELVIN)
-    {
+  switch(Units)
+  {
+    case C_KELVIN: // 20 < Temp < 30
       Temp = Temp + 273;
-    }
-  else
-    {
-      if(Units == C_FARHRENHEIT)
-        {
-          Temp_F = (Temp * 9/5) + 32;
-          Temp = (int)Temp_F;
-        }
-    }
+      break;
+      
+    case C_FARHRENHEIT: // 68 < Temp < 86
+      Temp_F = (Temp * 9/5) + 32;
+      Temp = (int)Temp_F;
+      break;
+    
+    case C_CELSIUS: // 20 < Temp < 30
+    default:
+      break;
+  }
+  
   
   return Temp; // Random entre 20 y 30
 }
