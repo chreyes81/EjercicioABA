@@ -14,7 +14,9 @@ int main(int argc, char *argv[]) {
     
     for(cont = 0; cont < 20; cont++)
     {
-      TemperaturaMedida = GetTemperature(C_KELVIN);
+      //TemperaturaMedida = GetTemperature(C_KELVIN);
+      TemperaturaMedida = GetTemperature(C_FARHRENHEIT);
+      //TemperaturaMedida = GetTemperature(C_CELSIUS);
       
       Result = TemperatureFilter(TemperaturaMedida, 4);
       printf("Temperatura Medida: ");
